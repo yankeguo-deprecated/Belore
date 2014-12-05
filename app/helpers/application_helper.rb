@@ -9,6 +9,13 @@ module ApplicationHelper
     end
   end
 
+  # li link for bootstrap active class
+  def li_link(link_text, link_path)
+    content_tag(:li, class: ('active' if current_page?(link_path)) ) do
+      link_to link_text, link_path
+    end
+  end
+
   # Automatically set locale override for all url
   def url_for(options={})
     val = super

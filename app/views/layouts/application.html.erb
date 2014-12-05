@@ -23,6 +23,11 @@
           <%= i18n_li_link lang %>
           <% end %>
         </ul>
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-right">
+          <%= li_link t(:posts), posts_path %>
+        </ul>
+        <% end %>
       </div>
     </div>
   </div>
