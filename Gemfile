@@ -13,6 +13,7 @@ gem 'http_accept_language', '~> 2.0.2'
 gem 'will_paginate', '~> 3.0.6'
 gem 'redcarpet',     '~> 3.2.1'
 gem 'sanitize', '~> 2.0'
+gem 'addressable'
 
 # Engine
 gem 'thin'

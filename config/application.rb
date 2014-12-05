@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Belore
   class Application < Rails::Application
+    # Handler locale better
+    # Remove default Middleware cause logic is in ApplicationController
+    config.middleware.delete HttpAcceptLanguage::Middleware
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
