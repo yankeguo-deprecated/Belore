@@ -26,3 +26,10 @@ class ActionController::Parameters
     self
   end
 end
+
+# Extend i18n with locale_names
+module I18n
+  # Store for locale names
+  cattr_accessor :locale_names
+  @@locale_names = {}
+end
