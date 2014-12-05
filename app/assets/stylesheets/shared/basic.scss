@@ -4,3 +4,19 @@ html.turbolinks-progress-bar::before {
 }
 
 body { padding-top: 60px; }
+
+.title-box-con {
+  width: 100%;
+  pointer-events:none;
+  z-index: 1200;
+  margin: -60px 0 0 0;
+  text-align: center;
+  position: absolute;
+  background: none !important;
+}
+
+.title-box {
+  width: 200px;
+  height: 65px;
+  margin: auto auto;
+}
