@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205122344) do
+ActiveRecord::Schema.define(version: 20141205124551) do
 
   create_table "posts", force: true do |t|
     t.boolean  "is_published", default: false, null: false
@@ -33,5 +33,18 @@ ActiveRecord::Schema.define(version: 20141205122344) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "versions", force: true do |t|
+    t.string   "title",         null: false
+    t.string   "lang",          null: false
+    t.text     "content",       null: false
+    t.text     "content_plain"
+    t.text     "content_rich"
+    t.integer  "post_id",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "versions", ["post_id"], name: "index_versions_on_post_id"
 
 end
