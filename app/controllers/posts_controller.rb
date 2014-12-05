@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @versions = @post.versions
     respond_with(@post)
   end
 
