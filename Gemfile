@@ -19,6 +19,7 @@ gem 'devise'     , '~> 3.4.1'
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Development and Test
@@ -27,5 +28,3 @@ group :development do
   gem 'spring'
   gem 'sqlite3'
 end
-
-ruby "2.1.4"
