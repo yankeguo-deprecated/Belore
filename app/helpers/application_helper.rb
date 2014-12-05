@@ -2,6 +2,11 @@ require "addressable/uri"
 
 module ApplicationHelper
 
+  # Glyphicon helper
+  def glyphicon(name)
+    tag :span, class: "glyphicon glyphicon-#{name}", 'aria-hidden' => "true"
+  end
+
   # I18n li link helper
   def i18n_li_link(lang)
     content_tag(:li, class: ((I18n.locale == lang) ? 'active' : nil )) do
