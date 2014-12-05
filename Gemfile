@@ -27,3 +27,5 @@ group :development do
   gem 'spring'
   gem 'sqlite3'
 end
+
+ruby "2.1.4"
