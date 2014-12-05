@@ -4,7 +4,6 @@ module ApplicationHelper
 
   # I18n li link helper
   def i18n_li_link(lang)
-    puts I18n.locale_names
     content_tag(:li, class: ((I18n.locale == lang) ? 'active' : nil )) do
       link_to I18n.locale_names[lang], url_for({ locale: lang })
     end
