@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :posts
+  resources :versions
 
   root to: 'welcome#index'
 
