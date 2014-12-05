@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require markdown
+//= require bootstrap-markdown
+//= require bootstrap-markdown.zh
 //= require_tree .
