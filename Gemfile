@@ -15,6 +15,12 @@ gem 'thin'
 # Devise
 gem 'devise'     , '~> 3.4.1'
 
+# Production
+
+group :production do
+  gem 'pg'
+end
+
 # Development and Test
 
 group :development do
