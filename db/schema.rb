@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205124551) do
+ActiveRecord::Schema.define(version: 20141206153421) do
+
+  create_table "attachments", force: true do |t|
+    t.string   "store"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", force: true do |t|
     t.boolean  "is_published", default: false, null: false

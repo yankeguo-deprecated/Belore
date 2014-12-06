@@ -22,6 +22,10 @@ gem 'thin'
 gem 'devise'     , '~> 3.4.1'
 gem 'devise-i18n', '~> 0.11.2'
 
+# Uploader
+gem "fog"
+gem 'carrierwave'
+
 # Production
 
 group :production do

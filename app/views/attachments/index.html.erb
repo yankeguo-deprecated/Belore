@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 text-center">
+      <%= will_paginate @attachments, class: 'pagination' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-body text-center">
+          <%= form_for @attachment, html: { class: "form-inline" } do |f| %>
+          <div class="form-group">
+            <%= f.file_field :store %>
+          </div>
+          <%= f.submit t(:confirm), class: 'btn btn-sm btn-primary' %>
+          <% end %>
+        </div>
+        <ul class="list-group">
+          <% @attachments.each do |att| %>
+          <li class="list-group-item"><%= att.store_url %> <span class="text-muted pull-right"><%= time_ago_in_words att.created_at %></span></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1 text-center">
+      <%= will_paginate @attachments, class: 'pagination' %>
+    </div>
+  </div>
+</div>
