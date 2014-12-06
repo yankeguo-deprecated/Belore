@@ -3,14 +3,13 @@ class PostsController < ApplicationController
 
   respond_to :html
 
-  def index
-    @posts = Post.all
-    respond_with(@posts)
-  end
-
   def show
     @versions = @post.versions
-    respond_with(@post)
+    @version = @versions.find_by(lang: I18n.locale)
+    if @version.present?
+    else
+      redirect_to :back
+    end
   end
 
   def new
@@ -19,6 +18,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @versions = @post.versions
   end
 
   def create
@@ -43,6 +43,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:is_published)
+      params.fetch(:post, {}).permit(:is_published)
     end
 end

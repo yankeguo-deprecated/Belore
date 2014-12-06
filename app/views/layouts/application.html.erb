@@ -8,10 +8,9 @@
 </head>
 <body>
   <!-- title -->
-  <div class="title-box-con">
-    <div class="title-box text-primary">
-      <h3>YANKE.IO</h3>
-    </div>
+
+  <div class="title-box text-primary">
+    <a href="/"><h3>YANKE.IO</h3></a>
   </div>
 
   <!-- navbar -->
@@ -41,7 +40,8 @@
         </ul>
         <% if user_signed_in? %>
         <ul class="nav navbar-nav navbar-right">
-          <%= li_link t(:posts), posts_path %>
+          <li><%= link_to t(:logout), destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to t(:new_post), posts_path, method: :post %></li>
         </ul>
         <% end %>
       </div>

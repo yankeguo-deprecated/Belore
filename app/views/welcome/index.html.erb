@@ -1,5 +1,20 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-<% @versions.each do |ver| %>
-<%= ver.title %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+
+      <% @versions.each do |ver| %>
+      <div>
+        <h2><%= link_to ver.title, ver.post, class: ("text-muted" if !ver.post.is_published) %></h2>
+        <% if user_signed_in? %>
+        <h6 class="text-right"><%= link_to t(:edit), edit_post_path(ver.post) %></h6>
+        <% end %>
+        <% ver.content_plain.lines.first(3).each do |line| %>
+        <h6><%= line %></h6><br/>
+        <% end %>
+      </div>
+      <hr/>
+      <% end %>
+
+    </div>
+  </div>
+</div>
