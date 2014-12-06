@@ -9,13 +9,15 @@
 
       <% @versions.each do |ver| %>
       <div>
-        <h2><%= link_to ver.title, ver.post, class: ("text-muted" if !ver.post.is_published) %></h2>
-        <h5 class="text-right">
-          <span class="text-muted"><%= time_ago_in_words ver.created_at %></span>
-          <% if user_signed_in? %>
-          | <span><%= link_to t(:edit), edit_post_path(ver.post) %></span>
-          <% end %>
-        </h5>
+        <h2>
+          <%= link_to ver.title, ver.post, class: ("text-muted" if !ver.post.is_published) %>
+          <small class="text-muted pull-right">
+            <%= time_ago_in_words ver.created_at %>
+            <% if user_signed_in? %>
+            | <span><%= link_to t(:edit), edit_post_path(ver.post) %></span>
+            <% end %>
+          </small>
+        </h2>
         <% ver.content_plain.lines.first(3).each do |line| %>
         <h6><%= line %></h6>
         <% end %>
