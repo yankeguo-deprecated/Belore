@@ -1,5 +1,10 @@
 zh-CN:
+  confirm_delete_post: '确认删除文章 ?'
+  delete: '删除'
   publish: '发布'
   confirm: '确认'
   edit_post: '编辑文章'
   back: '返回'
+  will_paginate:
+    previous_label: '上一页'
+    next_label: '下一页'

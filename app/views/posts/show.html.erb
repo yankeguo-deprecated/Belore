@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10 col-md-offset-1">
       <h2><%= @version.title %></h2>
       <h5 class="text-muted"><%= time_ago_in_words @version.created_at %></h5>
       <% if user_signed_in? %>

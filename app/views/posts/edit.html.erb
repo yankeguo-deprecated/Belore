@@ -5,8 +5,10 @@
 
         <div class="panel-body">
           <%= link_to t('back'), @post %>
+          <span class="pull-right"><%= link_to t('delete'), post_path(@post), class: 'text-danger', data: { method: :delete, confirm: t(:confirm_delete_post) } %></span>
 
-          <h4 class="text-center"><%= t(:edit_post) %> #<%= @post.id %></h4>
+          <h4 class="text-center"><%= t(:edit_post) %> #<%= @post.id %>
+          </h4>
         </div>
 
         <div class="list-group">

@@ -1,3 +1,8 @@
 en:
+  confirm_delete_post: 'Confirm to delete post ?'
+  delete: 'Delete'
   publish: 'Publish'
   confirm: 'Confirm'
+  will_paginate:
+    previous_label: 'Previous'
+    next_label: 'Next'
