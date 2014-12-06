@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Belore</title>
+  <title><%= yield :page_title %> YANKE.IO</title>
   <meta name="viewport" content="width=device-width,user-scalable=no" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- GA Head -->
+  <%= render 'shared/ga_head' %>
 </head>
 <body>
   <!-- title -->
@@ -52,6 +54,12 @@
   </div>
 
   <%= yield %>
+
+  <!-- Footer -->
+  <%= render 'shared/footer' %>
+
+  <!-- GA Page View -->
+  <%= render 'shared/ga_page_view' %>
 
 </body>
 </html>
