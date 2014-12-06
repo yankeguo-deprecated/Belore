@@ -8,7 +8,10 @@ class VersionsController < ApplicationController
   # PATCH/PUT /versions/1
   # PATCH/PUT /versions/1.json
   def update
-    version_params = params[:version]
+    version_params = params.require(:version).permit(:title, :content)
+    @version.update(version_params)
+
+    redirect_to edit_post_path(@version.post)
   end
 
   private

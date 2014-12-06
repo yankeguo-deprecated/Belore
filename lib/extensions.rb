@@ -32,4 +32,9 @@ module I18n
   # Store for locale names
   cattr_accessor :locale_names
   @@locale_names = {}
+
+  def self.locale_name(locale=nil)
+    locale ||= self.locale
+    @@locale_names[locale.to_sym]
+  end
 end

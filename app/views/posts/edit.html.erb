@@ -1,6 +1,37 @@
-<h1>Editing post</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
 
-<%= render 'form' %>
+        <div class="panel-body">
+          <%= link_to t('back'), @post %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+          <h4 class="text-center"><%= t(:edit_post) %> #<%= @post.id %></h4>
+        </div>
+
+        <div class="list-group">
+          <% @versions.each do |ver| %>
+          <%= link_to "#{I18n.locale_name(ver.lang)}: #{ver.title}", edit_version_path(ver), class: 'list-group-item' %>
+          <% end %>
+        </div>
+
+        <div class="panel-body">
+
+          <%= form_for(@post) do |f| %>
+          <div class="checkbox">
+            <label>
+              <%= f.check_box :is_published %> <%= t(:publish) %>
+            </label>
+          </div>
+          <div class="form-group text-center">
+            <%= f.submit t(:confirm), class: 'btn btn-primary' %>
+          </div>
+          <% end %>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

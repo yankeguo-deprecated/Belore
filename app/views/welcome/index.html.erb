@@ -5,6 +5,7 @@
       <% @versions.each do |ver| %>
       <div>
         <h2><%= link_to ver.title, ver.post, class: ("text-muted" if !ver.post.is_published) %></h2>
+        <h5 class="text-muted text-right"><%= time_ago_in_words ver.created_at %></h5>
         <% if user_signed_in? %>
         <h6 class="text-right"><%= link_to t(:edit), edit_post_path(ver.post) %></h6>
         <% end %>

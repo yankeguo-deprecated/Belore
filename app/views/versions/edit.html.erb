@@ -1,6 +1,29 @@
-<h1>Editing version</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
 
-<%= render 'form' %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%= link_to t('back'), edit_post_path(@version.post) %>
+          <h4 class="text-center"><%= t(:edit_post) %> #<%= @version.post.id %> - <%= I18n.locale_name(@version.lang) %> </h4>
+        </div>
+        <div class="panel-body">
+          <%= form_for @version do |f| %>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, class:"form-control"%>
+          </div>
+          <div class="form-group">
+            <%= f.label :content %>
+            <%= f.text_area :content, class: 'form-control', 'data-provide' => "markdown" %>
+          </div>
+          <div class="form-group text-right">
+            <%= f.submit t(:confirm), class: 'btn btn-primary' %>
+          </div>
+          <% end %>
+        </div>
+      </div>
 
-<%= link_to 'Show', @version %> |
-<%= link_to 'Back', versions_path %>
+    </div>
+  </div>
+</div>

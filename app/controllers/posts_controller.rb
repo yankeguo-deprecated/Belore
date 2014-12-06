@@ -12,11 +12,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
-    @post = Post.new
-    respond_with(@post)
-  end
-
   def edit
     @versions = @post.versions
   end
@@ -24,7 +19,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    respond_with(@post)
+    redirect_to edit_post_path(@post)
   end
 
   def update
