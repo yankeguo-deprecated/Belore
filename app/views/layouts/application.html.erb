@@ -47,6 +47,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to t(:logout), destroy_user_session_path, method: :delete %></li>
           <li><%= link_to t(:new_post), posts_path, method: :post %></li>
+          <li><%= link_to t(:attachments), attachments_path %></li>
         </ul>
         <% end %>
       </div>
