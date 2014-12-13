@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
     @versions = Version.all
     .joins(:post)
     .where(where_hash)
-    .order("is_published, rank, id DESC")
+    .order("is_published, rank DESC, id DESC")
     .paginate(:page => params[:page])
   end
 end
