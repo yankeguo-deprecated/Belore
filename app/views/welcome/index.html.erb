@@ -12,7 +12,7 @@
         <h2>
           <%= link_to ver.title, ver.post, class: ("text-muted" if !ver.post.is_published) %>
           <% if ver.post.rank >= 10000 %>
-          <%= glyphicon "star" %>
+          <span class="glyphicon glyphicon-star text-warning" aria-hidden="true"></span>
           <% end %>
           <small class="text-muted pull-right">
             <%= time_ago_in_words ver.created_at %>
