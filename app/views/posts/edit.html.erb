@@ -20,6 +20,10 @@
         <div class="panel-body">
 
           <%= form_for(@post) do |f| %>
+          <div class="form-group">
+            <label>Rank</label>
+            <%= f.text_field :rank, class: 'form-control' %>
+          </div>
           <div class="checkbox">
             <label>
               <%= f.check_box :is_published %> <%= t(:publish) %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141206153421) do
+ActiveRecord::Schema.define(version: 20141213053531) do
 
   create_table "attachments", force: true do |t|
     t.string   "store"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20141206153421) do
     t.boolean  "is_published", default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "rank",         default: 0,     null: false
   end
 
   create_table "users", force: true do |t|

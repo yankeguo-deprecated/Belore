@@ -39,6 +39,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.fetch(:post, {}).permit(:is_published)
+      params.fetch(:post, {}).permit(:is_published, :rank)
     end
 end
