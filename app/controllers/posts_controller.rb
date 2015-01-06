@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def show
     @versions = @post.versions
     @version = @versions.find_by(lang: I18n.locale)
+    @comments = @post.comments.order("id DESC").paginate(page: params[:comments_page])
     if @version.present?
     else
       redirect_to :back

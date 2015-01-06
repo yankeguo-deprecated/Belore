@@ -1,4 +1,9 @@
 zh-CN:
+  comments: '评论'
+  create_comment: '创建评论'
+  nickname: '昵称'
+  content: '内容'
+  submit: '提交'
   confirm_delete_post: '确认删除文章 ?'
   delete: '删除'
   publish: '发布'

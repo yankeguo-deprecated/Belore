@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150106153058) do
   end
 
   create_table "comments", force: true do |t|
+    t.integer  "post_id"
     t.string   "nickname"
     t.text     "content"
     t.boolean  "is_admin",   default: false, null: false

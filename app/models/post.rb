@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  has_many :comments, inverse_of: :post
 
   after_create do
     # Ensure versions after_save
