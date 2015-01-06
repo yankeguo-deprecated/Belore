@@ -17,9 +17,11 @@
     <div class="col-md-6 col-md-offset-1">
       <div class="panel panel-default">
         <div class="panel-heading"><%= t(:comments) %></div>
+        <% if will_paginate(@comments).present? %>
         <div class="panel-body text-center">
           <%= will_paginate @comments, class: 'pagination' %>
         </div>
+        <% end %>
         <ul class="list-group">
           <% @comments.each do |comment| %>
           <li class="list-group-item">
@@ -37,9 +39,11 @@
           </li>
           <% end %>
         </ul>
+        <% if will_paginate(@comments).present? %>
         <div class="panel-body text-center">
           <%= will_paginate @comments, class: 'pagination' %>
         </div>
+        <% end %>
       </div>
     </div>
     <div class="col-md-4">
