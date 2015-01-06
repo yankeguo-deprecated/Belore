@@ -1,4 +1,5 @@
 zh-CN:
+  no_comments: '没有评论'
   comments: '评论'
   create_comment: '创建评论'
   nickname: '昵称'

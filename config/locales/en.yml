@@ -1,4 +1,5 @@
 en:
+  no_comments: 'No Comments'
   comments: 'Comments'
   create_comment: 'Create Comment'
   nickname: 'Nickname'
