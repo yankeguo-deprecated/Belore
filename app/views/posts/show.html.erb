@@ -30,7 +30,7 @@
           <% else %>
           <% @comments.each do |comment| %>
           <li class="list-group-item">
-            <h4><%= comment.nickname %>
+            <h5><%= comment.nickname %>
               <% if comment.is_admin %>
               <span class="glyphicon glyphicon-star text-warning" aria-hidden="true"></span>
               <% end %>
@@ -39,7 +39,7 @@
               <% if user_signed_in? %>
               <%= link_to t(:delete), comment_path(comment), method: :delete, data:{ confirm: t(:confirm_delete_comment) } %>
               <% end %>
-            </h4>
+            </h5>
             <%= comment.content %>
           </li>
           <% end %>
