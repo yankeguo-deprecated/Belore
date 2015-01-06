@@ -4,6 +4,7 @@ en:
   nickname: 'Nickname'
   content: 'Content'
   submit: 'Submit'
+  confirm_delete_comment: 'Comfirm to delete comment ?'
   confirm_delete_post: 'Confirm to delete post ?'
   delete: 'Delete'
   publish: 'Publish'

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :posts,   only: [:show, :edit, :destroy, :create, :update] do
     resources :comments, only:[:create]
   end
+  resources :comments, only: [:destroy]
   resources :versions,only: [:edit, :update ]
   resources :attachments, only: [:index, :create]
 

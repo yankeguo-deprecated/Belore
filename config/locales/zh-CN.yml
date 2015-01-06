@@ -4,6 +4,7 @@ zh-CN:
   nickname: '昵称'
   content: '内容'
   submit: '提交'
+  confirm_delete_comment: '确认删除评论 ?'
   confirm_delete_post: '确认删除文章 ?'
   delete: '删除'
   publish: '发布'

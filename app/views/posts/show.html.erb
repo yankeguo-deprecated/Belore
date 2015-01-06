@@ -29,6 +29,9 @@
               <% end %>
               &nbsp;
               <span class="text-muted pull-right"><%= time_ago_in_words comment.created_at %></span>
+              <% if user_signed_in? %>
+              <%= link_to t(:delete), comment_path(comment), method: :delete, data:{ confirm: t(:confirm_delete_comment) } %>
+              <% end %>
             </h4>
             <%= comment.content %>
           </li>
