@@ -3,7 +3,7 @@ Belore Blog System
 
 [Yanke's Blog | http://yanke.io](http://yanke.io)
 
-Forum: [https://www.is0.org/topics/20](https://www.is0.org/topics/20)
+Forum: [https://www.island0.com/topics/20](https://www.island0.com/topics/20)
 
 Multilingual blog system based on Rails.
 
