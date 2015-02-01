@@ -56,7 +56,7 @@
       <div class="panel panel-default">
         <div class="panel-heading"><%= t(:create_comment) %></div>
         <div class="panel-body">
-          <%= form_for Comment.new(nickname: session[:nickname]), url: post_comments_path(@post) do |f| %>
+          <%= form_for Comment.new(nickname: cookies.permanent[:nickname]), url: post_comments_path(@post) do |f| %>
           <div class="form-group">
             <label><%= t(:nickname) %></label>
             <%= f.text_field :nickname, class: 'form-control' %>
