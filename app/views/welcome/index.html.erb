@@ -16,11 +16,11 @@
           <% end %>
           <small class="text-muted pull-right">
             <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-            <%= ver.post.comments.count %>&nbsp;|&nbsp;
             <%= time_ago_in_words ver.created_at %>&nbsp;
             <% if user_signed_in? %>
               &nbsp;| <span><%= link_to t(:edit), edit_post_path(ver.post) %></span>
             <% end %>
+            <%= ver.post.comments.count %>&nbsp;|&nbsp;
           </small>
         </h2>
         <% ver.content_plain.lines.first(3).each do |line| %>
@@ -38,6 +38,3 @@
     </div>
   </div>
 </div>
-<audio autoplay>
-  <source src="https://belore.s3.amazonaws.com/uploads/attachment/store/11/wu_hu_nyan.mp3">
-</audio>
