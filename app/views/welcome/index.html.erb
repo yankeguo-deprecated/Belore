@@ -15,9 +15,11 @@
           <span class="glyphicon glyphicon-star text-warning" aria-hidden="true"></span>
           <% end %>
           <small class="text-muted pull-right">
-            <%= time_ago_in_words ver.created_at %>
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            <%= ver.post.comments.count %>&nbsp;|&nbsp;
+            <%= time_ago_in_words ver.created_at %>&nbsp;
             <% if user_signed_in? %>
-            | <span><%= link_to t(:edit), edit_post_path(ver.post) %></span>
+              &nbsp;| <span><%= link_to t(:edit), edit_post_path(ver.post) %></span>
             <% end %>
           </small>
         </h2>
