@@ -1,40 +1,41 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 text-center">
-      <%= will_paginate @versions, class: 'pagination' %>
-    </div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 text-center">
+    <%= will_paginate @versions, class: 'pagination' %>
   </div>
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
 
-      <% @versions.each do |ver| %>
+    <% @versions.each do |ver| %>
       <div>
         <h2>
           <%= link_to ver.title, ver.post, class: ("text-muted" if !ver.post.is_published) %>
           <% if ver.post.rank >= 10000 %>
-          <span class="glyphicon glyphicon-star text-warning" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-star text-warning" aria-hidden="true"></span>
           <% end %>
           <small class="text-muted pull-right">
-            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
             <%= time_ago_in_words ver.created_at %>&nbsp;
             <% if user_signed_in? %>
-              &nbsp;| <span><%= link_to t(:edit), edit_post_path(ver.post) %></span>
+              | &nbsp; <span><%= link_to t(:edit), edit_post_path(ver.post) %></span>&nbsp;
             <% end %>
-            <%= ver.post.comments.count %>&nbsp;|&nbsp;
+            | &nbsp;
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+            <%= ver.post.comments.count %>
           </small>
         </h2>
         <% ver.content_plain.lines.first(3).each do |line| %>
-        <h6><%= line %></h6>
+          <h6><%= line %></h6>
         <% end %>
       </div>
       <hr/>
-      <% end %>
+    <% end %>
 
-    </div>
   </div>
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 text-center">
-      <%= will_paginate @versions, class: 'pagination' %>
-    </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 text-center">
+    <%= will_paginate @versions, class: 'pagination' %>
   </div>
+</div>
 </div>
